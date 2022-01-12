@@ -30,21 +30,20 @@ open class ApiResponse(
 
     fun responseError(error: Throwable? = null, flag: String? = null): ApiResponse {
         this.status = ApiStatus.ERROR
-        this.message = error?.message
         this.flag = flag
 
-        error?.let {
-            if (it is HttpException) {
-                it.response()?.errorBody()?.string()?.let { errorBody ->
-                    message = try {
-                        val responseJson = JSONObject(errorBody)
-                        responseJson.getString("message")
-                    } catch (e: JSONException) {
-                        e.printStackTrace()
-                        e.message
-                    }
+        if (error is HttpException) {
+            error.response()?.errorBody()?.string()?.let { errorBody ->
+                message = try {
+                    val responseJson = JSONObject(errorBody)
+                    responseJson.getString("message")
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                    e.message
                 }
             }
+        } else {
+            this.message = error?.message
         }
 
         return this

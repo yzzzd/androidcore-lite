@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="core/src/main/res/layout/_unused.xml" value="0.21851851851851853" />
+        <entry key="core/src/main/res/layout/core_dialog_loading.xml" value="0.27685185185185185" />
         <entry key="core/src/main/res/layout/core_item_load_more.xml" value="0.21851851851851853" />
         <entry key="core/src/main/res/layout/core_load_more.xml" value="0.21851851851851853" />
       </map>
