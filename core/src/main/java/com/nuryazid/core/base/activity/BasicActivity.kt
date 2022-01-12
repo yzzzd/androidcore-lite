@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.nuryazid.core.api.ApiResponse
+import com.nuryazid.core.ui.loading.LoadingDialog
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -18,6 +19,10 @@ import org.greenrobot.eventbus.ThreadMode
 abstract class BasicActivity<VB: ViewDataBinding>(@LayoutRes private val layoutRes: Int): AppCompatActivity() {
 
     protected lateinit var binding: VB
+
+    val loadingDialog: LoadingDialog by lazy {
+        LoadingDialog(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

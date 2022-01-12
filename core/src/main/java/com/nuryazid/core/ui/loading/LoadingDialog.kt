@@ -7,6 +7,10 @@ import androidx.databinding.DataBindingUtil
 import com.nuryazid.core.R
 import com.nuryazid.core.databinding.CoreDialogLoadingBinding
 
+/**
+ * Created by @yzzzd on 4/22/18.
+ */
+
 class LoadingDialog(context: Context) {
 
     private var binding: CoreDialogLoadingBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.core_dialog_loading, null, false)
