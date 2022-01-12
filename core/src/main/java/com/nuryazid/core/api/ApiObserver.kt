@@ -13,12 +13,13 @@ import org.json.JSONObject
 
 open class ApiObserver(block: suspend () -> String, toast: Boolean = false, onSuccess: (response: JSONObject) -> Unit) {
 
-    private var onErrorThrowable: ((Throwable) -> Unit)? = null
+    private var onErrorThrowable: ((ApiResponse) -> Unit)? = null
 
     init {
         val exception = CoroutineExceptionHandler { coroutineContext, throwable ->
-            EventBus.getDefault().post(ApiResponse(toast = toast).responseError(throwable))
-            onErrorThrowable?.invoke(throwable)
+            val response = ApiResponse(toast = toast).responseError(throwable)
+            EventBus.getDefault().post(response)
+            onErrorThrowable?.invoke(response)
         }
 
         CoroutineScope(exception + Dispatchers.IO).launch {
@@ -28,7 +29,7 @@ open class ApiObserver(block: suspend () -> String, toast: Boolean = false, onSu
         }
     }
 
-    fun onError(onError: (e: Throwable) -> Unit) {
+    fun onError(onError: (response: ApiResponse) -> Unit) {
         onErrorThrowable = onError
     }
 }

@@ -14,15 +14,15 @@ open class ApiResponse(
     var flag: String? = null,
     var toast: Boolean = false
 ) {
-    fun responseSuccess(message: String? = null, flag: String? = null): ApiResponse {
-        this.status = ApiStatus.SUCCESS
+    fun responseLoading(message: String? = null, flag: String? = null): ApiResponse {
+        this.status = ApiStatus.LOADING
         this.message = message
         this.flag = flag
         return this
     }
 
-    fun responseLoading(message: String? = null, flag: String? = null): ApiResponse {
-        this.status = ApiStatus.LOADING
+    fun responseSuccess(message: String? = null, flag: String? = null): ApiResponse {
+        this.status = ApiStatus.SUCCESS
         this.message = message
         this.flag = flag
         return this
