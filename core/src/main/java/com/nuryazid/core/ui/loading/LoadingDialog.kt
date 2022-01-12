@@ -16,7 +16,10 @@ class LoadingDialog(context: Context) {
     private var binding: CoreDialogLoadingBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.core_dialog_loading, null, false)
     private var dialog: AlertDialog = AlertDialog.Builder(context).apply {
         setView(binding.root)
+        setOnDismissListener { dismissListener?.invoke(this@LoadingDialog) }
     }.create()
+
+    private var dismissListener: ((LoadingDialog) -> Unit)? = null
 
     fun show(message: String?, loading: Boolean = true): LoadingDialog {
         binding.loading = loading
@@ -36,6 +39,11 @@ class LoadingDialog(context: Context) {
         if (dialog.isShowing) {
             dialog.dismiss()
         }
+    }
+
+    fun onDismiss(dismissListener: (dialog: LoadingDialog) -> Unit): LoadingDialog {
+        this.dismissListener = dismissListener
+        return this
     }
 
 }
