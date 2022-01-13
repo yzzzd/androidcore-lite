@@ -36,7 +36,7 @@ class HomeActivity : CoreActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
 }
 ```
 
-### 1. Extend BasicActivity
+### 2. Extend BasicActivity
 To get DataBinding without ViewModel implementation
 ```kotlin
 class HomeActivity : BasicActivity<ActivityHomeBinding>(R.layout.activity_home) {
