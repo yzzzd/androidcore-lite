@@ -3,6 +3,7 @@ package com.nuryazid.core.ui.loading
 import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.nuryazid.core.R
 import com.nuryazid.core.databinding.CoreDialogLoadingBinding
@@ -13,7 +14,7 @@ import com.nuryazid.core.databinding.CoreDialogLoadingBinding
 
 class LoadingDialog(context: Context) {
 
-    private var binding: CoreDialogLoadingBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.core_dialog_loading, null, false)
+    private var binding = CoreDialogLoadingBinding.inflate(LayoutInflater.from(context))
     private var dialog: AlertDialog = AlertDialog.Builder(context).apply {
         setView(binding.root)
         setOnDismissListener { dismissListener?.invoke(this@LoadingDialog) }
@@ -22,8 +23,8 @@ class LoadingDialog(context: Context) {
     private var dismissListener: ((LoadingDialog) -> Unit)? = null
 
     fun show(message: String?, loading: Boolean = true): LoadingDialog {
-        binding.loading = loading
-        binding.message = message ?: ""
+        binding.progressBar.isVisible = loading
+        binding.tvMessage.text = message ?: ""
         dialog.setCancelable(!loading)
         show()
         return this
