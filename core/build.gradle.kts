@@ -37,6 +37,12 @@ android {
     buildFeatures {
         dataBinding = true
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
@@ -86,14 +92,15 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.github.yzzzd"
+            artifactId = "androidcore-lite"
+            version = "2.0.0"
+
+            afterEvaluate {
                 from(components["release"])
-                groupId = "com.github.yzzzd"
-                artifactId = "androidcore-lite"
-                version = "2.0.0"
             }
         }
     }
