@@ -1,7 +1,6 @@
 [versions]
 activity = "1.9.0"
-agp = "8.5.0"
-amazingspinner = "2.0.0"
+agp = "8.3.0"
 appcompat = "1.6.1"
 calendarView = "2.5.1"
 coil = "2.6.0"
@@ -11,8 +10,6 @@ converterGson = "2.9.0"
 coreKtx = "1.13.1"
 coreSplashscreen = "1.0.1"
 crashlytics = "3.0.1"
-desugar_jdk_libs = "2.0.4"
-dotsindicator = "5.0"
 espressoCore = "3.5.1"
 eventbus = "3.3.1"
 firebase = "33.0.0"
@@ -36,7 +33,6 @@ stfalconimageviewer = "1.0.1"
 swiperefreshlayout = "1.1.0"
 
 [libraries]
-amazingspinner = { module = "com.github.Mamoon-Alhawamdeh:AmazingSpinner", version.ref = "amazingspinner" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -53,12 +49,9 @@ androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref =
 androidx-room-runtime = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
-calendar-view = { module = "com.kizitonwose.calendar:view", version.ref = "calendarView" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 compressor = { module = "id.zelory:compressor", version.ref = "compressor" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
-desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
-dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }
 eventbus = { module = "org.greenrobot:eventbus", version.ref = "eventbus" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics"}
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase"}
@@ -83,4 +76,3 @@ firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "perf"
 google-service = { id = "com.google.gms.google-services", version.ref = "gms"}
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-androidx-room = { id = "androidx.room", version.ref = "roomRuntime" }
