@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CoreApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="isMaterial3DynamicColorApplied">false</item>
+
+        <item name="colorPrimary">@color/grey_brand</item>
+        <item name="colorAccent">@color/grey_brand</item>
+
+        <item name="android:windowBackground">@color/white</item>
+
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@android:color/transparent</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@android:color/transparent</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">0</item>
+
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:statusBarColor">@color/grey_brand</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:textColor">@color/text_default</item>
+        <item name="android:textColorHint">#636363</item>
+
+        <item name="android:fontFamily">@font/outfit</item>
+        <item name="android:includeFontPadding">false</item>
+
+        <item name="floatingActionButtonStyle">@style/FabCircle</item>
+    </style>
+
+    <style name="Theme.CoreApp" parent="Base.Theme.CoreApp" />
+
+    <style name="Theme.CoreApp.YellowNavigation" parent="Base.Theme.CoreApp">
+        <item name="android:navigationBarColor">@color/grey_brand</item>
+        <item name="android:windowBackground">@color/grey_brand</item>
+    </style>
+
+    <style name="Theme.CoreApp.WhiteStatus" parent="Base.Theme.CoreApp">
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="Theme.CoreApp.WhiteStatusSurface" parent="Base.Theme.CoreApp">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/bg_window_surface</item>
+    </style>
+
+    <style name="FabCircle" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="MaterialCalendarTheme" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/text_default</item>
+    </style>
+
+</resources>
