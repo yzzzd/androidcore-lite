@@ -16,7 +16,7 @@ and:
 
 ```gradle
 dependencies {
-    implementation 'com.github.yzzzd:androidcore-lite:{latest version}'
+    implementation 'com.nuryazid:androidcore-lite:{latest version}'
 }
 ```
 
