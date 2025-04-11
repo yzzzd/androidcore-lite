@@ -20,6 +20,7 @@ hilt = "2.51.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 kotlin = "2.0.21"
+ksp = "2.0.21-1.0.27"
 lifecycleRuntimeKtx = "2.8.7"
 material = "1.12.0"
 pagingRuntimeKtx = "3.3.6"
@@ -76,3 +77,4 @@ firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "perf"
 google-service = { id = "com.google.gms.google-services", version.ref = "gms"}
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}

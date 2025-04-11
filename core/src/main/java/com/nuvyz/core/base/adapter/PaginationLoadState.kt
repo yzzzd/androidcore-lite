@@ -1,3 +1,4 @@
+/*
 package com.nuvyz.core.base.adapter
 
 import android.view.LayoutInflater
@@ -34,4 +35,4 @@ open class PaginationLoadState<VB : ViewDataBinding>(@LayoutRes private val layo
         return NetworkStateItemViewHolder(binding)
     }
 
-}
+}*/

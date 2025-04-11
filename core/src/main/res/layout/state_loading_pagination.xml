@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <data>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"/>
 
-        <import type="android.view.View" />
+    <!--android:visibility="@{ loading ? View.VISIBLE : View.GONE }"-->
 
-        <variable
-            name="data"
-            type="String" />
-
-        <variable
-            name="loading"
-            type="Boolean" />
-    </data>
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:visibility="@{ loading ? View.VISIBLE : View.GONE }" />
-
-    </FrameLayout>
-</layout>
+</FrameLayout>

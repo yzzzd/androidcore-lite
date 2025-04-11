@@ -7,22 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
-import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nuvyz.core.data.model.response.ApiStatus
 
-abstract class BaseBottomSheet<VB: ViewDataBinding>(@LayoutRes private val layoutRes: Int): BottomSheetDialogFragment() {
+abstract class BaseBottomSheet<VB: ViewBinding>: BottomSheetDialogFragment() {
 
-    protected var binding: VB? = null
+    protected abstract val binding: VB
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,3 +1,4 @@
+/*
 package com.nuvyz.core.base.adapter
 
 import androidx.paging.PagingConfig
@@ -36,4 +37,4 @@ open class BasePagingSource<T : Any> constructor(private val firstPageIndex: Int
             LoadResult.Error(e)
         }
     }
-}
+}*/

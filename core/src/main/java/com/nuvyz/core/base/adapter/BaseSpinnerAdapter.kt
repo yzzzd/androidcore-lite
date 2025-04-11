@@ -1,3 +1,4 @@
+/*
 package com.nuvyz.core.base.adapter
 
 import android.view.LayoutInflater
@@ -59,4 +60,4 @@ class BaseSpinnerAdapter<VB: ViewDataBinding, T: Any>(@LayoutRes private val lay
             data.size
         }
     }
-}
+}*/

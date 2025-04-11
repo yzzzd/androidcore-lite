@@ -1,3 +1,4 @@
+/*
 package com.nuvyz.core.base.adapter
 
 import android.annotation.SuppressLint
@@ -53,4 +54,4 @@ open class BasePagingAdapter<VB: ViewDataBinding, T: Any>(@LayoutRes private val
             return newItem === oldItem
         }
     }
-}
+}*/

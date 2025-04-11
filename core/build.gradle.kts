@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-kapt")
     id("maven-publish")
 }
 
@@ -10,7 +9,7 @@ android {
     compileSdk = 35
 
     group = "com.nuvyz.core"
-    version = "2.0.1"
+    version = "2.0.1b"
 
     defaultConfig {
         minSdk = 23
@@ -33,7 +32,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
-        dataBinding = true
+        viewBinding = true
     }
     publishing {
         singleVariant("release") {
@@ -95,7 +94,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.github.yzzzd"
             artifactId = "androidcore-lite"
-            version = "2.0.1"
+            version = "2.0.1b"
 
             afterEvaluate {
                 from(components["release"])

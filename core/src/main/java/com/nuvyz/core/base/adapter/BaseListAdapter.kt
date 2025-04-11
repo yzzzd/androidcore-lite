@@ -1,3 +1,4 @@
+/*
 package com.nuvyz.core.base.adapter
 
 import android.annotation.SuppressLint
@@ -68,4 +69,4 @@ open class BaseListAdapter<VB: ViewDataBinding, T: Any>(@LayoutRes private val l
             }
         }
     }
-}
+}*/

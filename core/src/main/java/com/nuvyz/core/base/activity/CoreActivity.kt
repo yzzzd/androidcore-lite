@@ -10,15 +10,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.FileProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.nuvyz.core.base.fragment.CoreFragment
 import com.nuvyz.core.utils.ActivityExtension.createImageFile
@@ -30,9 +28,9 @@ import org.greenrobot.eventbus.ThreadMode
 import java.io.File
 import java.io.IOException
 
-abstract class CoreActivity<VB: ViewDataBinding>(@LayoutRes private val layoutRes: Int): AppCompatActivity() {
+abstract class CoreActivity<VB: ViewBinding>: AppCompatActivity() {
 
-    protected lateinit var binding: VB
+    protected abstract val binding: VB
 
     private var fragment: CoreFragment<*>? = null
 
@@ -42,8 +40,7 @@ abstract class CoreActivity<VB: ViewDataBinding>(@LayoutRes private val layoutRe
         super.onCreate(savedInstanceState)
         // WindowCompat.setDecorFitsSystemWindows(window, false)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        binding = DataBindingUtil.setContentView(this, layoutRes)
-        binding.lifecycleOwner = this
+        setContentView(binding.root)
     }
 
     protected fun addInset(view: View, left: Boolean = false, top: Boolean = false, right: Boolean = false, bottom: Boolean = false) {

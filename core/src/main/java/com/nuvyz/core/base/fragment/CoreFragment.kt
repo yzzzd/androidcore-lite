@@ -7,22 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.IntentSenderRequest
-import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.nuvyz.core.base.activity.CoreActivity
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-abstract class CoreFragment<VB: ViewDataBinding>(@LayoutRes private val layoutRes: Int): Fragment() {
+abstract class CoreFragment<VB: ViewBinding>: Fragment() {
 
-    protected lateinit var binding: VB
+    protected abstract val binding: VB
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         return binding.root
     }
 
