@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.utils.createPublishingInfoForLibrary
-
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -9,10 +7,10 @@ plugins {
 
 android {
     namespace = "com.nuvyz.core"
-    compileSdk = 34
+    compileSdk = 35
 
     group = "com.nuvyz.core"
-    version = "2.0.0"
+    version = "2.0.1"
 
     defaultConfig {
         minSdk = 23
@@ -97,7 +95,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.github.yzzzd"
             artifactId = "androidcore-lite"
-            version = "2.0.0"
+            version = "2.0.1"
 
             afterEvaluate {
                 from(components["release"])
